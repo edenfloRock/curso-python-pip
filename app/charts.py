@@ -6,15 +6,16 @@ def generate_bar_chart(name, labels, values):
   plt.savefig(f'./imgs/{name}.png')
   plt.close()
 
-def generate_pie_chart(labels, values):
+def generate_pie_chart(labels, values, continent):
   fig, ax = plt.subplots()
   ax.pie(values, labels=labels)
   ax.axis('equal')
-  plt.savefig('chart_pie.png')
+  plt.savefig(f'chart_pie{continent}_1.png')
   plt.close()
 
 if __name__ == '__main__':
   labels = ['a', 'b', 'c']
   values = [10, 40, 800]
+  continent = 'Africa'
   # generate_bar_chart(labels, values)
-  generate_pie_chart(labels, values)
+  generate_pie_chart(labels, values, continent)
